@@ -1,0 +1,15 @@
+// Calculate em values
+@function em($target, $context: $base__font-size)
+	@return ($target / $context) * 1em
+
+
+// Calculate % values
+@function fluid($target, $context)
+	@return ($target / $context) * 100%
+
+//Call color from color palette
+@function color($key)
+	@if map-has-key($shadow-palette, $key)
+		@return map-get($shadow-palette, $key)
+	@warn "Unknown `#{$key}` in $shadow-palette."
+	@return null

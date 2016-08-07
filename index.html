@@ -6,11 +6,22 @@
 	<title>Wiki Viewer</title>
 	<meta name="description" content="Web app based on Wikipedia's API">
 	<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="app/css/main.css">
 </head>
 <body>
 
-	<h1>Hi it's work!</h1>
+	<main class="wrap">
+		<section class="search">
+			<div class="search__box">
+				<input type="search" placeholder="Search article ..." class="search__input">
+				<button type="button" class="search__button"><i class="material-icons">search</i></button>
+			</div>
+			<a href="#" class="search__random">...or get random one</a>
+		</section>
+
+		<section class="result"></section>
+	</main>
 
 	<script src="app/js/main.min.js"></script>
 

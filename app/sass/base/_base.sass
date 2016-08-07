@@ -8,10 +8,11 @@ body
 	height: 100%
 
 body
-	color: $brown
+	background: $grey-bg
+	color: $grey-text
 
 h1,h2,h3
-	color: $orange
+	color: $blue
 
 h1
 	font-size: + em(32px)
@@ -27,8 +28,10 @@ p
 	line-height: 1.5
 
 a
-	text-decoration: none
-	color: $black
+	color: #65737e
+	font-size: em(18px)
+	+breakpoint($md__brkpoint)
+		font-size: 1em
 
 img
 	max-width: 100%
@@ -38,3 +41,8 @@ li
 	margin: 0
 	padding: 0
 	list-style: none
+
+::-webkit-input-placeholder
+	font-size: em(18px)
+	+breakpoint($md__brkpoint)
+		font-size: 1em

@@ -1,0 +1,44 @@
+.search
+  height: 100vh
+  margin: auto
+  padding: 15px
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  +breakpoint($md__brkpoint)
+    width: 500px
+    padding: 0
+
+  &__box
+    margin-bottom: 25px
+
+  &__input
+    background: $grey-bg
+    width: 100%
+    outline: 0
+    border: 0
+    border-bottom: 1px solid $blue
+    padding-top: 26px
+    margin-bottom: 25px
+    text-align: center
+    font-size: em(18px)
+    &:focus
+      border-bottom: 2px solid $blue
+    +breakpoint($md__brkpoint)
+      width: 400px
+      margin-bottom: 0
+      font-size: 1em
+      text-align: left
+
+  &__button
+    background: $grey-bg
+    border: 0
+    outline: 0
+
+    .material-icons
+      font-size: 40px
+      color: $blue
+      padding: 0px
+      +breakpoint($md__brkpoint)
+        font-size: 35px

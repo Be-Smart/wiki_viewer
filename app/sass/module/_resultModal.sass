@@ -1,0 +1,39 @@
+.result
+  background: $grey-bg
+  position: fixed
+  top: 0
+  right: -100%
+  width: 100%
+  height: 100vh
+  padding: 15px
+  overflow-y: auto
+  transition: all 0.5s cubic-bezier(0.82, 0.01, 0.77, 0.78)
+
+  &__header
+    text-align: center
+
+  &__card
+    padding: 15px
+    transition: all ease .3s
+    &:hover
+      background: #fff
+
+  &__link
+    text-decoration: none
+    display: block
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+    +breakpoint($md__brkpoint)
+      width: 75%
+      margin: auto
+
+#close
+  display: none
+  font-size: 40px
+  position: fixed
+  top: 15px
+  right: 15px
+  z-index: 99
+  cursor: pointer
+  transition: transform ease .3s
+  &:hover
+    transform: rotate(90deg)

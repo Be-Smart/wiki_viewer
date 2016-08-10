@@ -1,18 +1,32 @@
 "use strict";
 
+var WikiViewer = require('./wikiViewer');
+
 var btn = document.querySelector('.search__button');
 var close = document.getElementById('close');
 var wrapper = document.querySelector('.wrap');
-var result = document.querySelector('.result');
+var modal = document.querySelector('.result');
+var input = document.querySelector('.search__input');
 
-btn.addEventListener('click', function() {
-  wrapper.className += ' open';
-  result.className += ' open';
-  close.style.display = 'initial';
+var wikiViewer = new WikiViewer({
+  wrapEl: wrapper,
+  modalEl: modal,
+  btn: btn,
+  closeEl: close,
+  inputEl: input,
 });
 
-close.addEventListener('click', function() {
-  wrapper.className = 'wrap';
-  result.className = 'result';
-  close.style.display = 'none';
+input.addEventListener('keyup', function() {
+  if (event.keyCode == 13) {
+    btn.click();
+  }
+});
+
+btn.addEventListener('click', function(e) {
+  JSONP('https://en.wikipedia.org/w/api.php?format=json&action=query&formatversion=2&generator=search&prop=extracts&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + input.value, wikiViewer.render.bind(wikiViewer));
+  wikiViewer.changeView(e);
+});
+
+close.addEventListener('click', function(e) {
+  wikiViewer.changeView(e);
 });

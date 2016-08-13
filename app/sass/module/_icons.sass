@@ -1,0 +1,18 @@
+#searchIcon
+  font-size: 40px
+  color: $blue
+  padding: 0px
+  +breakpoint($md__brkpoint)
+    font-size: 35px
+
+#close
+  display: none
+  font-size: 40px
+  position: fixed
+  top: 15px
+  right: 25px
+  z-index: 99
+  cursor: pointer
+  transition: transform ease .3s
+  &:hover
+    transform: rotate(90deg)

@@ -11,29 +11,22 @@
 
   &__header
     text-align: center
+    margin: 35px 0 50px
 
   &__card
     padding: 15px
     transition: all ease .3s
     &:hover
-      background: #fff
+      background: $white
 
   &__link
     text-decoration: none
     display: block
     border-bottom: 1px solid rgba(0, 0, 0, 0.3)
+    &:first-of-type
+      border-top: 1px solid rgba(0, 0, 0, 0.3)
     +breakpoint($md__brkpoint)
-      width: 75%
+      width: 80%
       margin: auto
-
-#close
-  display: none
-  font-size: 40px
-  position: fixed
-  top: 15px
-  right: 25px
-  z-index: 99
-  cursor: pointer
-  transition: transform ease .3s
-  &:hover
-    transform: rotate(90deg)
+    +breakpoint($lg__brkpoint)
+      width: 70%
